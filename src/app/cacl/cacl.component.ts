@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-cacl',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CaclComponent implements OnInit {
 
+  sugar = new FormControl("");
+  hossz = new FormControl("");
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onKeyup(event:any){
+    console.log(event.key)
+    if(event.key == "Enter"){
+      alert("megnyomtad az embert")
+    }
   }
 
 }
